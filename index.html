@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detektif Makna: Edisi Ular Tangga — Bahasa Indonesia Kelas 9</title>
+  <!-- Google Fonts: Fredoka & Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fredoka', 'sans-serif'],
+            body: ['Nunito', 'sans-serif'],
+          },
+          colors: {
+            detective: {
+              cream: '#FFFBEB',
+              amber: '#F59E0B',
+              navy: '#1E293B',
+              indigo: '#3730A3',
+              teal: '#0D9488',
+              coral: '#F43F5E',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Gaya Kustom Tema Detektif Literasi */
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #FEF9E7;
+      background-image:
+        radial-gradient(#FDE68A 1.5px, transparent 1.5px),
+        radial-gradient(#FED7AA 1.5px, #FEF9E7 1.5px);
+      background-size: 36px 36px;
+      background-position: 0 0, 18px 18px;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-fredoka {
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    /* Animasi Kocok Dadu */
+    @keyframes diceShake {
+      0% { transform: rotate(0deg) scale(1); }
+      20% { transform: rotate(-18deg) scale(1.12) translateY(-6px); }
+      40% { transform: rotate(16deg) scale(1.15) translateY(-10px); }
+      60% { transform: rotate(-14deg) scale(1.1) translateY(-4px); }
+      80% { transform: rotate(12deg) scale(1.06) translateY(-2px); }
+      100% { transform: rotate(0deg) scale(1); }
+    }
+
+    .animate-dice-roll {
+      animation: diceShake 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    /* Animasi Denyut Kotak Spesial Bintang */
+    @keyframes starPulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.18) rotate(8deg); }
+    }
+
+    .animate-star-badge {
+      animation: starPulse 2s ease-in-out infinite;
+    }
+
+    /* Animasi Lompatan Pion */
+    @keyframes pawnHop {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-14px) scale(1.14); }
+    }
+
+    .pawn-hopping {
+      animation: pawnHop 0.28s ease-out;
+    }
+
+    /* Animasi Masuk Modal */
+    @keyframes modalPop {
+      0% { opacity: 0; transform: scale(0.9) translateY(14px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .animate-modal-pop {
+      animation: modalPop 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Tombol 3D Ramah Anak */
+    .btn-3d {
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.15s ease;
+    }
+    .btn-3d:active:not(:disabled) {
+      transform: translateY(3px);
+    }
+
+    /* Scrollbar Rapi */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FEF3C7;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #F59E0B;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 flex flex-col selection:bg-amber-300 selection:text-slate-900">
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b-2 border-amber-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 flex items-center justify-between gap-2">
+      <!-- Brand / Logo -->
+      <button onclick="navigateTo('start')" class="flex items-center gap-2.5 text-left group focus:outline-none">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-md border-2 border-amber-200 group-hover:scale-105 transition-transform">
+          <!-- Ikon Kaca Pembesar Detektif SVG -->
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="20" y1="20" x2="16.2" y2="16.2"></line>
+            <path d="M9 11h4M11 9v4" stroke-width="2"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-fredoka text-base sm:text-xl font-bold text-slate-800 leading-tight">
+            Detektif <span class="text-amber-600">Makna</span>
+          </h1>
+          <p class="text-[11px] sm:text-xs font-bold text-indigo-700 tracking-wide">
+            Edisi Ular Tangga • Bahasa Indonesia SMP IX
+          </p>
+        </div>
+      </button>
+
+      <!-- Action Controls -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5">
+        <button id="btn-sound-toggle" onclick="toggleSound()" title="Atur Efek Suara"
+          class="p-2.5 sm:px-3.5 sm:py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs sm:text-sm flex items-center gap-1.5 border border-amber-300 transition">
+          <span id="sound-icon">🔊</span>
+          <span id="sound-label" class="hidden sm:inline">Suara Aktif</span>
+        </button>
+
+        <button onclick="openRulesModal()"
+          class="p-2.5 sm:px-3.5 sm:py-2 rounded-xl bg-sky-100 hover:bg-sky-200 text-sky-900 font-bold text-xs sm:text-sm flex items-center gap-1.5 border border-sky-300 transition">
+          <span>📖</span>
+          <span class="hidden sm:inline">Panduan</span>
+        </button>
+
+        <button onclick="navigateTo('leaderboard')"
+          class="p-2.5 sm:px-3.5 sm:py-2 rounded-xl bg-indigo-100 hover:bg-indigo-200 text-indigo-900 font-bold text-xs sm:text-sm flex items-center gap-1.5 border border-indigo-300 transition">
+          <span>🏆</span>
+          <span class="hidden sm:inline">Peringkat</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== TOAST NOTIFICATION BANNER ==================== -->
+  <div id="toast-container" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none w-[92%] max-w-md flex flex-col items-center gap-2"></div>
+
+  <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-6 py-4 sm:py-6">
+
+    <!-- ============================================================ -->
+    <!-- 1. HALAMAN AWAL (START SCREEN)                               -->
+    <!-- ============================================================ -->
+    <section id="start-screen" class="max-w-2xl mx-auto">
+      <div class="bg-white rounded-3xl shadow-xl border-4 border-amber-300 overflow-hidden">
+        <!-- Hero Banner -->
+        <div class="bg-gradient-to-r from-indigo-700 via-indigo-600 to-teal-600 p-6 sm:p-8 text-white text-center relative overflow-hidden">
+          <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-3 border border-white/30">
+            <span>🕵️‍♂️</span> Misi Literasi SMP Kelas 9: Makna Tersurat &amp; Tersirat
+          </div>
+          <h2 class="font-fredoka text-2xl sm:text-4xl font-bold tracking-tight drop-shadow-sm">
+            Detektif Makna:<br class="sm:hidden" /> Edisi Ular Tangga
+          </h2>
+          <p class="mt-2 text-indigo-100 text-sm sm:text-base max-w-lg mx-auto">
+            Lempar dadu, selidiki kutipan teks, naiki tangga petunjuk, dan hindari jebakan ular untuk menjadi Detektif Bahasa terbaik!
+          </p>
+        </div>
+
+        <!-- Form Input Tim & Pemain -->
+        <form id="start-form" onsubmit="handleStartGame(event)" class="p-5 sm:p-8 space-y-5">
+          <!-- Identitas Kelas & Sekolah -->
+          <div class="bg-amber-50/90 p-4 rounded-2xl border-2 border-amber-200">
+            <label for="input-team" class="block font-fredoka text-sm sm:text-base font-semibold text-amber-900 mb-1.5">
+              🏫 Kelas &amp; Sekolah (Identitas Tim)
+            </label>
+            <input
+              type="text"
+              id="input-team"
+              maxlength="40"
+              placeholder="Contoh: Kelas 9A - SMPN 1 Nusantara"
+              class="w-full px-4 py-3 rounded-xl bg-white border-2 border-amber-300 focus:border-indigo-500 focus:outline-none font-bold text-slate-800 placeholder:font-normal placeholder:text-slate-400 transition"
+            />
+          </div>
+
+          <!-- Input Pemain 1 & Pemain 2 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Pemain 1 (Merah) -->
+            <div class="bg-rose-50 p-4 rounded-2xl border-2 border-rose-200">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs font-bold flex items-center justify-center shadow">P1</span>
+                <label for="input-p1" class="font-fredoka text-base font-semibold text-rose-900">
+                  Pemain 1 (Merah)
+                </label>
+              </div>
+              <input
+                type="text"
+                id="input-p1"
+                maxlength="24"
+                placeholder="Nama Detektif Merah..."
+                class="w-full px-4 py-3 rounded-xl bg-white border-2 border-rose-300 focus:border-rose-600 focus:outline-none font-bold text-slate-800 placeholder:font-normal placeholder:text-slate-400 transition"
+              />
+            </div>
+
+            <!-- Pemain 2 (Biru) -->
+            <div class="bg-sky-50 p-4 rounded-2xl border-2 border-sky-200">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="w-6 h-6 rounded-full bg-sky-600 text-white text-xs font-bold flex items-center justify-center shadow">P2</span>
+                <label for="input-p2" class="font-fredoka text-base font-semibold text-sky-900">
+                  Pemain 2 (Biru)
+                </label>
+              </div>
+              <input
+                type="text"
+                id="input-p2"
+                maxlength="24"
+                placeholder="Nama Detektif Biru..."
+                class="w-full px-4 py-3 rounded-xl bg-white border-2 border-sky-300 focus:border-sky-600 focus:outline-none font-bold text-slate-800 placeholder:font-normal placeholder:text-slate-400 transition"
+              />
+            </div>
+          </div>
+
+          <!-- Ringkasan Aturan Singkat -->
+          <div class="grid grid-cols-3 gap-2.5 text-center text-xs sm:text-sm">
+            <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3">
+              <div class="text-xl mb-1">🪜⭐</div>
+              <p class="font-bold text-emerald-900">Tangga Petunjuk</p>
+              <p class="text-[11px] text-emerald-700">Jawab benar = naik!</p>
+            </div>
+            <div class="bg-rose-50 border border-rose-200 rounded-2xl p-3">
+              <div class="text-xl mb-1">🐍⭐</div>
+              <p class="font-bold text-rose-900">Jebakan Ular</p>
+              <p class="text-[11px] text-rose-700">Terkecoh = turun!</p>
+            </div>
+            <div class="bg-indigo-50 border border-indigo-200 rounded-2xl p-3">
+              <div class="text-xl mb-1">🏁25</div>
+              <p class="font-bold text-indigo-900">Petak Finis</p>
+              <p class="text-[11px] text-indigo-700">Tercepat jadi juara!</p>
+            </div>
+          </div>
+
+          <!-- Tombol Aksi Utama -->
+          <div class="flex flex-col sm:flex-row gap-3 pt-1">
+            <button type="submit"
+              class="btn-3d flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white font-fredoka text-lg sm:text-xl font-bold shadow-[0_5px_0_#B45309] flex items-center justify-center gap-2">
+              <span>🔍</span> Mulai Investigasi!
+            </button>
+
+            <button type="button" onclick="navigateTo('leaderboard')"
+              class="btn-3d py-4 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-fredoka text-base sm:text-lg font-bold shadow-[0_5px_0_#312E81] flex items-center justify-center gap-2">
+              <span>🏆</span> Leaderboard
+            </button>
+          </div>
+        </form>
+
+        <!-- Kredit Kreator -->
+        <div class="bg-amber-50/90 border-t-2 border-amber-200 px-5 py-3 text-center">
+          <p class="text-xs sm:text-sm font-bold text-slate-600 flex items-center justify-center gap-1.5">
+            <span>✍️</span> Kreator: <span class="font-fredoka text-indigo-800 font-bold">Syahriatul Qudsiah</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3. HALAMAN LEADERBOARD (PAPAN PERINGKAT)                     -->
+    <!-- ============================================================ -->
+    <section id="leaderboard-screen" class="hidden max-w-3xl mx-auto">
+      <div class="bg-white rounded-3xl shadow-xl border-4 border-amber-300 overflow-hidden">
+        <!-- Header Leaderboard -->
+        <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 p-6 text-white text-center">
+          <div class="text-4xl mb-1">🏆</div>
+          <h2 class="font-fredoka text-2xl sm:text-3xl font-bold">Papan Peringkat Detektif Makna</h2>
+          <p class="text-amber-100 text-xs sm:text-sm mt-1">
+            Peringkat tim terbaik berdasarkan efisiensi lemparan dadu &amp; ketepatan analisis teks
+          </p>
+        </div>
+
+        <div class="p-5 sm:p-7">
+          <!-- Podium 3 Besar -->
+          <div id="podium-container" class="grid grid-cols-3 gap-2 sm:gap-4 items-end mb-7 pt-4">
+            <!-- Dirender secara dinamis dari localStorage -->
+          </div>
+
+          <!-- Daftar Skor Lengkap -->
+          <div class="bg-slate-50 rounded-2xl border-2 border-slate-200 overflow-hidden">
+            <div class="px-4 py-3 bg-slate-100 border-b border-slate-200 flex items-center justify-between">
+              <h3 class="font-fredoka font-bold text-sm sm:text-base text-slate-700">Daftar Rekor Detektif</h3>
+              <span id="leaderboard-count" class="text-xs font-bold text-slate-500">0 Rekor</span>
+            </div>
+            <div id="leaderboard-list" class="divide-y divide-slate-200 max-h-72 overflow-y-auto">
+              <!-- Dirender secara dinamis -->
+            </div>
+          </div>
+
+          <!-- Tombol Navigasi Leaderboard -->
+          <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+            <button onclick="navigateTo('start')"
+              class="btn-3d py-3 px-6 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-fredoka font-bold text-sm sm:text-base shadow-[0_4px_0_#312E81]">
+              ⬅️ Kembali ke Beranda
+            </button>
+
+            <button id="btn-reset-leaderboard" onclick="handleResetLeaderboard()"
+              class="py-2.5 px-4 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 font-bold text-xs sm:text-sm transition">
+              🗑️ Hapus Riwayat Skor
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== MODAL 1: KUIS INTERAKTIF (⭐) ==================== -->
+  <div id="quiz-modal" class="hidden fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
+    <div class="animate-modal-pop bg-white w-full max-w-2xl rounded-3xl shadow-2xl border-4 border-amber-400 overflow-hidden my-auto">
+      <!-- Header Modal Kuis -->
+      <div id="quiz-modal-header" class="p-4 sm:p-5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+          <span id="quiz-type-badge" class="px-3 py-1 rounded-full bg-white/20 text-xs font-extrabold tracking-wide uppercase">
+            ⭐ KOTAK TANGGA PETUNJUK
+          </span>
+          <span id="quiz-category-badge" class="px-3 py-1 rounded-full bg-amber-300 text-slate-900 text-xs font-extrabold">
+            Cerpen • Makna Tersirat
+          </span>
+        </div>
+        <h3 id="quiz-mission-title" class="font-fredoka text-lg sm:text-xl font-bold">
+          Pecahkan petunjuk ini untuk menaiki tangga ke Petak 12!
+        </h3>
+      </div>
+
+      <!-- Isi Modal Kuis -->
+      <div class="p-4 sm:p-6 space-y-4">
+        <!-- Kotak Kutipan Teks -->
+        <div class="bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl p-4 shadow-inner">
+          <p class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 mb-1">
+            📄 Kutipan Teks Barang Bukti:
+          </p>
+          <p id="quiz-passage" class="text-sm sm:text-base font-bold text-slate-800 leading-relaxed italic">
+            "Kutipan teks akan muncul di sini..."
+          </p>
+        </div>
+
+        <!-- Pertanyaan -->
+        <div>
+          <p id="quiz-question" class="font-fredoka text-base sm:text-lg font-semibold text-slate-900">
+            Pertanyaan analisis makna akan muncul di sini?
+          </p>
+        </div>
+
+        <!-- Pilihan Jawaban (A, B, C, D) -->
+        <div id="quiz-options" class="space-y-2.5">
+          <!-- Tombol opsi dirender oleh JavaScript -->
+        </div>
+
+        <!-- Kotak Pembahasan Setelah Menjawab -->
+        <div id="quiz-feedback-box" class="hidden rounded-2xl p-4 border-2 transition-all">
+          <div class="flex items-start gap-3">
+            <span id="quiz-feedback-icon" class="text-2xl">💡</span>
+            <div class="flex-1">
+              <h4 id="quiz-feedback-title" class="font-fredoka font-bold text-base">
+                Analisis Tepat!
+              </h4>
+              <p id="quiz-feedback-explanation" class="text-xs sm:text-sm font-semibold mt-1 leading-relaxed">
+                Penjelasan singkat pembahasan...
+              </p>
+            </div>
+          </div>
+
+          <button id="btn-quiz-continue" onclick="finalizeQuizOutcome()"
+            class="btn-3d mt-4 w-full py-3.5 px-5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-fredoka font-bold text-base shadow-[0_4px_0_#312E81]">
+            Lanjutkan Langkah ➡️
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 2: GAME OVER / PEMENANG ==================== -->
+  <div id="gameover-modal" class="hidden fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
+    <div class="animate-modal-pop bg-white w-full max-w-lg rounded-3xl shadow-2xl border-4 border-amber-400 overflow-hidden text-center my-auto">
+      <div class="bg-gradient-to-br from-amber-400 via-orange-500 to-rose-500 p-6 text-white relative">
+        <div class="text-5xl mb-2 animate-bounce">👑</div>
+        <span class="px-3 py-1 rounded-full bg-white/25 text-xs font-extrabold uppercase tracking-wider">
+          Kasus Terpecahkan!
+        </span>
+        <h2 id="winner-name-display" class="font-fredoka text-2xl sm:text-3xl font-bold mt-2 drop-shadow">
+          Detektif Merah Menang!
+        </h2>
+        <p id="winner-team-display" class="text-amber-100 text-xs sm:text-sm font-bold mt-1">
+          Kelas 9A - SMPN 1 Nusantara
+        </p>
+      </div>
+
+      <div class="p-5 sm:p-6 space-y-4">
+        <p class="text-sm font-bold text-slate-600">
+          Selamat! Kamu berhasil mencapai Petak 25 dan menuntaskan investigasi makna tersurat &amp; tersirat!
+        </p>
+
+        <!-- Statistik Pertandingan -->
+        <div class="grid grid-cols-2 gap-3 text-left">
+          <div class="bg-indigo-50 border border-indigo-200 rounded-2xl p-3.5">
+            <p class="text-[11px] font-bold text-indigo-600 uppercase">Lemparan Dadu Pemenang</p>
+            <p id="stat-winner-rolls" class="font-fredoka text-2xl font-bold text-indigo-950 mt-0.5">0 Kali</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-2xl p-3.5">
+            <p class="text-[11px] font-bold text-amber-700 uppercase">Skor Detektif</p>
+            <p id="stat-winner-score" class="font-fredoka text-2xl font-bold text-amber-950 mt-0.5">0 Poin</p>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3.5">
+            <p class="text-[11px] font-bold text-emerald-700 uppercase">Kuis Terpecahkan</p>
+            <p id="stat-winner-correct" class="font-fredoka text-xl font-bold text-emerald-950 mt-0.5">0 Kasus</p>
+          </div>
+          <div class="bg-slate-100 border border-slate-200 rounded-2xl p-3.5">
+            <p class="text-[11px] font-bold text-slate-600 uppercase">Total Lemparan Kedua Pemain</p>
+            <p id="stat-total-rolls" class="font-fredoka text-xl font-bold text-slate-800 mt-0.5">0 Kali</p>
+          </div>
+        </div>
+
+        <!-- Tombol Aksi Game Over -->
+        <div class="space-y-2.5 pt-2">
+          <button onclick="closeGameOverAndViewLeaderboard()"
+            class="btn-3d w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-fredoka text-base sm:text-lg font-bold shadow-[0_4px_0_#B45309]">
+            🏆 Lihat Papan Peringkat
+          </button>
+
+          <div class="grid grid-cols-2 gap-2.5">
+            <button onclick="rematchSamePlayers()"
+              class="btn-3d py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-fredoka font-bold text-sm shadow-[0_4px_0_#312E81]">
+              🔄 Main Lagi
+            </button>
+            <button onclick="closeGameOverAndGoStart()"
+              class="btn-3d py-3 px-4 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-fredoka font-bold text-sm shadow-[0_4px_0_#94A3B8]">
+              🏠 Menu Awal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 3: PANDUAN BERMAIN ==================== -->
+  <div id="rules-modal" class="hidden fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="animate-modal-pop bg-white w-full max-w-lg rounded-3xl shadow-2xl border-4 border-sky-400 overflow-hidden">
+      <div class="bg-sky-600 p-4 sm:p-5 text-white flex items-center justify-between">
+        <h3 class="font-fredoka text-xl font-bold flex items-center gap-2">
+          <span>📖</span> Panduan Detektif Makna
+        </h3>
+        <button onclick="closeRulesModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 font-bold flex items-center justify-center">
+          ✕
+        </button>
+      </div>
+      <div class="p-5 space-y-3 text-sm text-slate-700 font-semibold">
+        <div class="flex items-start gap-3 bg-amber-50 p-3 rounded-xl border border-amber-200">
+          <span class="text-xl">🎲</span>
+          <p><strong>Bergiliran Melempar Dadu:</strong> Pemain 1 (Merah) dan Pemain 2 (Biru) bergantian mengocok dadu untuk melangkah di papan zig-zag 1 sampai 25.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-emerald-50 p-3 rounded-xl border border-emerald-200">
+          <span class="text-xl">⭐🪜</span>
+          <p><strong>Kotak Spesial Tangga:</strong> Jika mendarat di kaki tangga (⭐), jawab soal analisis teks dengan benar untuk <strong>naik tangga</strong>. Jika salah, kamu tetap di petak semula.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-rose-50 p-3 rounded-xl border border-rose-200">
+          <span class="text-xl">⭐🐍</span>
+          <p><strong>Kotak Spesial Ular:</strong> Jika mendarat di kepala ular (⭐), jawab soal dengan benar agar <strong>selamat dan tidak turun</strong>. Jika terkecoh (salah), kamu tergelincir turun!</p>
+        </div>
+        <div class="flex items-start gap-3 bg-indigo-50 p-3 rounded-xl border border-indigo-200">
+          <span class="text-xl">🏆</span>
+          <p><strong>Menang &amp; Skor:</strong> Detektif pertama yang mencapai <strong>Petak 25</strong> menjadi pemenang. Semakin sedikit lemparan dadu dan semakin banyak kuis benar, semakin tinggi skor di Leaderboard!</p>
+        </div>
+        <button onclick="closeRulesModal()"
+          class="btn-3d w-full mt-2 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-fredoka font-bold text-base shadow-[0_4px_0_#0369A1]">
+          Siap Menginvestigasi!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 4: KONFIRMASI KELUAR MISI ==================== -->
+  <div id="quit-modal" class="hidden fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="animate-modal-pop bg-white w-full max-w-sm rounded-3xl shadow-2xl border-4 border-rose-300 p-6 text-center">
+      <div class="text-4xl mb-2">🚨</div>
+      <h3 class="font-fredoka text-xl font-bold text-slate-800">Hentikan Investigasi?</h3>
+      <p class="text-sm font-semibold text-slate-600 mt-1.5">
+        Progres permainan saat ini tidak akan disimpan ke papan peringkat.
+      </p>
+      <div class="grid grid-cols-2 gap-3 mt-5">
+        <button onclick="closeQuitConfirmModal()"
+          class="py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 font-fredoka font-bold text-slate-700">
+          Batal
+        </button>
+        <button onclick="confirmQuitGame()"
+          class="py-3 px-4 rounded-xl bg-rose-600 hover:bg-rose-500 font-fredoka font-bold text-white shadow">
+          Ya, Keluar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT LOGIKA GAME & BANK SOAL ==================== -->
+  <script>
+    /**
+     * =========================================================================
+     * 1. MODUL EFEK SUARA WEB AUDIO API (TANPA URL EKSTERNAL)
+     * =========================================================================
+     */
+    class SoundFX {
+      constructor() {
+        this.ctx = null;
+        this.enabled = true;
+      }
+
+      init() {
+        if (!this.ctx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) {
+            this.ctx = new AudioCtx();
+          }
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      playTone(freq, type = 'sine', duration = 0.15, startTimeOffset = 0, volume = 0.18) {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx) return;
+
+        const now = this.ctx.currentTime + startTimeOffset;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, now);
+
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.exponentialRampToValueAtTime(volume, now + 0.015);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + duration + 0.02);
+      }
+
+      // Efek suara kocok dadu
+      playDiceRoll() {
+        if (!this.enabled) return;
+        const freqs = [240, 320, 280, 390, 310, 440];
+        freqs.forEach((f, idx) => {
+          this.playTone(f, 'triangle', 0.06, idx * 0.075, 0.15);
+        });
+      }
+
+      // Efek suara langkah pion per petak
+      playStep(stepIndex = 0) {
+        const baseFreq = 420 + (stepIndex % 5) * 45;
+        this.playTone(baseFreq, 'sine', 0.11, 0, 0.16);
+      }
+
+      // Efek suara mendarat di kotak spesial (⭐)
+      playSpecialTile() {
+        this.playTone(587.33, 'triangle', 0.18, 0, 0.2);     // D5
+        this.playTone(880.00, 'triangle', 0.28, 0.14, 0.22); // A5
+      }
+
+      // Efek suara jawaban benar
+      playCorrect() {
+        this.playTone(523.25, 'triangle', 0.14, 0, 0.2);     // C5
+        this.playTone(659.25, 'triangle', 0.14, 0.1, 0.2);   // E5
+        this.playTone(783.99, 'triangle', 0.16, 0.2, 0.22);  // G5
+        this.playTone(1046.5, 'sine', 0.32, 0.3, 0.24);      // C6
+      }
+
+      // Efek suara jawaban salah
+      playWrong() {
+        this.playTone(311.13, 'sawtooth', 0.2, 0, 0.13);     // Eb4
+        this.playTone(233.08, 'sawtooth', 0.32, 0.18, 0.13); // Bb3
+      }
+
+      // Efek suara naik tangga
+      playLadderClimb() {
+        const notes = [392, 440, 493.88, 523.25, 659.25, 783.99];
+        notes.forEach((n, i) => this.playTone(n, 'sine', 0.12, i * 0.065, 0.18));
+      }
+
+      // Efek suara turun ular
+      playSnakeSlide() {
+        const notes = [523.25, 466.16, 415.30, 349.23, 293.66, 220.00];
+        notes.forEach((n, i) => this.playTone(n, 'triangle', 0.13, i * 0.07, 0.17));
+      }
+
+      // Efek suara menang permainan
+      playWin() {
+        const melody = [
+          { f: 523.25, t: 0.00, d: 0.15 },
+          { f: 523.25, t: 0.16, d: 0.15 },
+          { f: 523.25, t: 0.32, d: 0.15 },
+          { f: 659.25, t: 0.48, d: 0.28 },
+          { f: 587.33, t: 0.78, d: 0.18 },
+          { f: 659.25, t: 0.98, d: 0.18 },
+          { f: 783.99, t: 1.18, d: 0.45 }
+        ];
+        melody.forEach(m => this.playTone(m.f, 'triangle', m.d, m.t, 0.24));
+      }
+    }
+
+    const sfx = new SoundFX();
+
+    function toggleSound() {
+      sfx.enabled = !sfx.enabled;
+      const iconEl = document.getElementById('sound-icon');
+      const labelEl = document.getElementById('sound-label');
+      if (sfx.enabled) {
+        iconEl.textContent = '🔊';
+        labelEl.textContent = 'Suara Aktif';
+        sfx.playStep(2);
+      } else {
+        iconEl.textContent = '🔇';
+        labelEl.textContent = 'Suara Bisu';
+      }
+    }
+
+    /**
+     * =========================================================================
+     * 2. BANK SOAL BAHASA INDONESIA SMP KELAS 9 (28 SOAL BERKUALITAS)
+     *    Cakupan: Makna Tersurat, Makna Tersirat/Amanat, Ungkapan/Majas/Kata Kias,
+     *    serta Watak Tokoh, Latar Suasana, & Hubungan Sebab-Akibat Implisit.
+     * =========================================================================
+     */
+    const QUESTION_BANK = [
+      // --- KELOMPOK A: MAKNA TERSURAT (FAKTA TERTULIS LANGSUNG) ---
+      {
+        id: 1,
+        genre: "Cerpen",
+        category: "Makna Tersurat",
+        passage: "Sejak pukul 06.30 pagi, Bima sudah duduk di bangku paling depan aula sekolah sambil memeriksa kembali catatan presentasi karya ilmiahnya, meskipun hujan deras mengguyur kota sejak subuh.",
+        question: "Informasi tersurat yang sesuai dengan kutipan cerpen tersebut adalah...",
+        options: [
+          "Bima sudah berada di aula sekolah sejak pukul 06.30 pagi.",
+          "Bima merasa gugup karena belum menyiapkan catatan presentasi.",
+          "Lomba karya ilmiah dibatalkan akibat hujan deras sejak subuh.",
+          "Seluruh peserta lomba datang terlambat karena cuaca buruk."
+        ],
+        correctIndex: 0,
+        explanation: "Makna tersurat adalah informasi yang tertulis secara langsung dalam teks. Kalimat pertama secara jelas menyebutkan bahwa Bima sudah duduk di aula sekolah sejak pukul 06.30 pagi."
+      },
+      {
+        id: 2,
+        genre: "Teks Berita",
+        category: "Makna Tersurat",
+        passage: "Dinas Lingkungan Hidup Kota Melati mencatat penurunan volume sampah plastik sebesar 28 persen dalam enam bulan terakhir setelah diterapkannya gerakan membawa botol minum sendiri di 45 sekolah menengah.",
+        question: "Berdasarkan kutipan berita di atas, pernyataan yang tertulis secara langsung adalah...",
+        options: [
+          "Seluruh warga Kota Melati dilarang menjual minuman kemasan plastik.",
+          "Volume sampah plastik menurun 28 persen dalam kurun enam bulan.",
+          "Gerakan membawa botol minum hanya diikuti oleh siswa sekolah dasar.",
+          "Dinas Lingkungan Hidup membagikan botol minum gratis ke 450 sekolah."
+        ],
+        correctIndex: 1,
+        explanation: "Fakta yang dinyatakan secara eksplisit dalam berita tersebut adalah penurunan volume sampah plastik sebesar 28 persen selama enam bulan terakhir."
+      },
+      {
+        id: 3,
+        genre: "Teks Eksposisi",
+        category: "Makna Tersurat",
+        passage: "Literasi digital tidak hanya berkaitan dengan kemampuan mengoperasikan gawai, tetapi juga mencakup kecakapan menyaring informasi hoaks serta menjaga etika berkomunikasi di ruang siber.",
+        question: "Apa saja cakupan literasi digital yang disebutkan secara eksplisit dalam teks?",
+        options: [
+          "Kemampuan merakit perangkat keras komputer dan membuat aplikasi.",
+          "Kecakapan menyaring informasi hoaks dan menjaga etika berkomunikasi.",
+          "Keterampilan berjualan daring dan mengelola akun media sosial bisnis.",
+          "Kebiasaan membaca berita hiburan setiap hari melalui ponsel pintar."
+        ],
+        correctIndex: 1,
+        explanation: "Teks secara langsung menyebutkan bahwa literasi digital mencakup kecakapan menyaring informasi hoaks dan menjaga etika berkomunikasi di ruang siber."
+      },
+      {
+        id: 4,
+        genre: "Fabel",
+        category: "Makna Tersurat",
+        passage: "Sepanjang musim kemarau, Semut Merah tekun mengumpulkan butiran gandum ke dalam lubang pohon tua, sementara Belalang Hijau asyik menggesek biolanya di atas dahan jati.",
+        question: "Fakta tersurat mengenai aktivitas Semut Merah dalam kutipan fabel tersebut adalah...",
+        options: [
+          "Semut Merah bermain musik bersama Belalang di atas dahan jati.",
+          "Semut Merah menyimpan butiran gandum di dalam lubang pohon tua.",
+          "Semut Merah meminjamkan makanan kepada Belalang saat musim hujan.",
+          "Semut Merah beristirahat penuh selama musim kemarau berlangsung."
+        ],
+        correctIndex: 1,
+        explanation: "Tertulis secara langsung pada bagian awal kalimat bahwa Semut Merah mengumpulkan butiran gandum ke dalam lubang pohon tua."
+      },
+      {
+        id: 5,
+        genre: "Cerpen",
+        category: "Makna Tersurat",
+        passage: "Sebelum berangkat berjualan ke pasar pukul lima pagi, Ibu selalu meletakkan segelas teh hangat dan sepiring pisang goreng di meja belajar Rani.",
+        question: "Pernyataan yang sesuai dengan isi tersurat kutipan cerpen tersebut adalah...",
+        options: [
+          "Rani membantu Ibu berjualan pisang goreng di pasar setiap pagi.",
+          "Ibu berangkat ke pasar setelah Rani pulang dari sekolah.",
+          "Ibu menyiapkan teh hangat dan pisang goreng di meja belajar Rani.",
+          "Rani sarapan bersama Ibu di warung dekat pasar pukul lima pagi."
+        ],
+        correctIndex: 2,
+        explanation: "Informasi tersurat dapat ditemukan langsung dalam teks, yaitu Ibu meletakkan segelas teh hangat dan sepiring pisang goreng di meja belajar Rani."
+      },
+      {
+        id: 6,
+        genre: "Teks Berita",
+        category: "Makna Tersurat",
+        passage: "Perpustakaan Daerah Kabupaten Cendekia meluncurkan layanan perpustakaan keliling berbasis mobil listrik setiap akhir pekan untuk menjangkau desa-desa di lereng gunung.",
+        question: "Kapan layanan perpustakaan keliling berbasis mobil listrik tersebut beroperasi?",
+        options: [
+          "Setiap hari Senin hingga Jumat pagi.",
+          "Hanya pada hari libur nasional tertentu.",
+          "Setiap akhir pekan untuk menjangkau desa lereng gunung.",
+          "Sebulan sekali saat ada acara pameran buku daerah."
+        ],
+        correctIndex: 2,
+        explanation: "Keterangan waktu yang tertulis secara jelas dalam kutipan berita tersebut adalah 'setiap akhir pekan'."
+      },
+      {
+        id: 7,
+        genre: "Teks Eksposisi",
+        category: "Makna Tersurat",
+        passage: "Tidur yang cukup selama 7 hingga 8 jam setiap malam membantu remaja memulihkan energi fisik sekaligus memperkuat daya ingat jangka panjang.",
+        question: "Manfaat tidur cukup selama 7 hingga 8 jam bagi remaja menurut teks adalah...",
+        options: [
+          "Menghilangkan kewajiban belajar di rumah pada malam hari.",
+          "Memulihkan energi fisik dan memperkuat daya ingat jangka panjang.",
+          "Membuat remaja tidak perlu lagi mengonsumsi makanan bergizi.",
+          "Meningkatkan kecepatan berlari dalam pertandingan olahraga."
+        ],
+        correctIndex: 1,
+        explanation: "Dua manfaat tersebut disebutkan secara langsung dalam teks: memulihkan energi fisik sekaligus memperkuat daya ingat jangka panjang."
+      },
+
+      // --- KELOMPOK B: MAKNA TERSIRAT (AMANAT, PESAN MORAL & MAKSUD PENULIS) ---
+      {
+        id: 8,
+        genre: "Fabel",
+        category: "Makna Tersirat (Amanat)",
+        passage: "Kura-kura terus melangkah perlahan tanpa menoleh sedikit pun meski Kelinci menertawakannya dan tertidur pulas di bawah pohon rindang; akhirnya Kura-kura menyentuh garis finis lebih dahulu.",
+        question: "Amanat tersirat yang terkandung dalam kutipan fabel tersebut adalah...",
+        options: [
+          "Tidur di bawah pohon rindang sangat baik untuk memulihkan tenaga.",
+          "Ketekunan dan konsistensi mampu mengalahkan sikap sombong.",
+          "Setiap perlombaan lari sebaiknya diadakan pada sore hari.",
+          "Kelinci merupakan hewan yang paling cepat di seluruh hutan."
+        ],
+        correctIndex: 1,
+        explanation: "Secara tersirat, kisah Kura-kura mengajarkan bahwa usaha yang tekun dan konsisten akan membuahkan hasil daripada kesombongan yang membuat lengah."
+      },
+      {
+        id: 9,
+        genre: "Cerpen",
+        category: "Makna Tersirat (Maksud Tokoh)",
+        passage: "Ayah menatap sepatu bolaku yang solnya sudah menganga, lalu perlahan memasukkan kembali brosur ponsel baru ke dalam laci mejanya dan tersenyum lembut kepadaku.",
+        question: "Makna tersirat dari tindakan Ayah dalam kutipan cerpen tersebut adalah...",
+        options: [
+          "Ayah tidak menyukai model ponsel yang ada di dalam brosur.",
+          "Ayah menunda keinginannya demi memprioritaskan kebutuhan sepatu anaknya.",
+          "Ayah meminta anaknya memperbaiki sepatu bola itu sendiri.",
+          "Ayah sudah memiliki dua ponsel baru di dalam laci mejanya."
+        ],
+        correctIndex: 1,
+        explanation: "Tindakan Ayah menyimpan kembali brosur ponsel setelah melihat sepatu anaknya rusak menyiratkan kasih sayang dan pengorbanan orang tua yang mendahulukan kebutuhan anak."
+      },
+      {
+        id: 10,
+        genre: "Fabel",
+        category: "Makna Tersirat (Amanat)",
+        passage: "Gagak yang bangga dipuji kemerduan suaranya oleh Rubah segera membuka paruhnya lebar-lebar untuk bernyanyi, sehingga potongan keju di paruhnya jatuh dan langsung disambar Rubah.",
+        question: "Pesan moral tersirat yang ingin disampaikan pengarang melalui cerita tersebut adalah...",
+        options: [
+          "Berlatihlah bernyanyi setiap hari agar suara terdengar merdu.",
+          "Jangan mudah terlena oleh pujian manis yang memiliki niat tersembunyi.",
+          "Berbagilah makanan dengan siapa saja yang memuji penampilan kita.",
+          "Keju merupakan makanan kesukaan burung gagak dan rubah."
+        ],
+        correctIndex: 1,
+        explanation: "Rubah memuji Gagak hanya untuk mengelabui agar keju terjatuh. Pesan tersiratnya adalah kita harus waspada terhadap pujian berlebihan yang bermaksud memperdaya."
+      },
+      {
+        id: 11,
+        genre: "Teks Eksposisi",
+        category: "Makna Tersirat (Maksud Penulis)",
+        passage: "Banyak pelajar kini menghabiskan waktu lebih dari lima jam sehari hanya untuk menggulir layar media sosial, padahal waktu tersebut dapat dialokasikan untuk membaca buku atau mengasah keterampilan baru.",
+        question: "Maksud tersembunyi (tersirat) penulis dalam paragraf eksposisi tersebut adalah...",
+        options: [
+          "Melarang sekolah menggunakan perangkat digital dalam pembelajaran.",
+          "Mengajak pelajar mengurangi waktu bermain media sosial agar lebih produktif.",
+          "Menjelaskan cara membuat akun media sosial yang populer di kalangan remaja.",
+          "Menyatakan bahwa membaca buku hanya bermanfaat bagi pelajar SMP."
+        ],
+        correctIndex: 1,
+        explanation: "Dengan membandingkan waktu terbuang di media sosial dan kegiatan positif, penulis secara tersirat mengajak pelajar bijak mengatur waktu agar lebih produktif."
+      },
+      {
+        id: 12,
+        genre: "Cerpen",
+        category: "Makna Tersirat (Pesan Moral)",
+        passage: "Meskipun juara pertama lomba lukis tingkat kota direbut oleh peserta dari sekolah lain, Arka tetap menghampiri pemenang tersebut dan menjabat tangannya dengan senyum tulus.",
+        question: "Nilai kehidupan tersirat yang tergambar dari sikap Arka adalah...",
+        options: [
+          "Keberhasilan hanya dapat diraih dengan mengikuti banyak perlombaan.",
+          "Sikap sportif dan berlapang dada jauh lebih mulia daripada sekadar piala.",
+          "Arka berencana membalas kekalahannya pada lomba tahun depan.",
+          "Peserta dari sekolah lain memiliki peralatan lukis yang lebih mahal."
+        ],
+        correctIndex: 1,
+        explanation: "Menghampiri dan memberi selamat dengan tulus kepada lawan yang menang mencerminkan sportivitas dan kebesaran hati."
+      },
+      {
+        id: 13,
+        genre: "Teks Eksposisi",
+        category: "Makna Tersirat (Simpulan)",
+        passage: "Hutan bakau di pesisir pantai tidak hanya berfungsi menahan abrasi gelombang laut, tetapi juga menjadi habitat kepiting dan ikan kecil yang menopang mata pencaharian nelayan setempat.",
+        question: "Simpulan tersirat yang paling tepat berdasarkan kutipan teks tersebut adalah...",
+        options: [
+          "Nelayan setempat dilarang menangkap kepiting di sekitar pesisir pantai.",
+          "Kelestarian hutan bakau berdampak langsung pada ekonomi dan lingkungan pesisir.",
+          "Abrasi pantai hanya dapat dicegah dengan membangun tanggul beton.",
+          "Ikan kecil tidak dapat hidup di perairan laut lepas."
+        ],
+        correctIndex: 1,
+        explanation: "Teks menghubungkan fungsi ekologis bakau (penahan abrasi & habitat) dengan ekonomi nelayan, sehingga tersirat bahwa menjaga bakau berarti menjaga alam sekaligus ekonomi warga."
+      },
+      {
+        id: 14,
+        genre: "Cerpen",
+        category: "Makna Tersirat (Maksud Ucapan)",
+        passage: "\"Wah, kamarmu rapi sekali, sampai-sampai buku pelajaran dan kaus kaki bisa berdiskusi di atas kasur,\" ujar Kakak sambil menggelengkan kepala di ambang pintu.",
+        question: "Makna tersirat dari ucapan Kakak dalam kutipan dialog tersebut adalah...",
+        options: [
+          "Kakak memuji keindahan tata ruang kamar adiknya.",
+          "Kakak menyindir kondisi kamar adiknya yang sangat berantakan.",
+          "Kakak mengajak adiknya berdiskusi tentang pelajaran sekolah.",
+          "Kakak sedang mencari kaus kakinya yang tertinggal di kasur."
+        ],
+        correctIndex: 1,
+        explanation: "Ucapan 'rapi sekali' yang diikuti gambaran buku dan kaus kaki berserakan di kasur merupakan majas ironi yang menyiratkan sindiran bahwa kamar tersebut berantakan."
+      },
+
+      // --- KELOMPOK C: UNGKAPAN, MAJAS & KATA KIAS ---
+      {
+        id: 15,
+        genre: "Cerpen",
+        category: "Ungkapan & Kata Kias",
+        passage: "Setelah bertahun-tahun menjadi tulang punggung keluarga, Kak Dimas akhirnya berhasil membuka usaha bengkel motor sendiri berkat ketekunan dan tabungan jerih payahnya.",
+        question: "Makna ungkapan 'tulang punggung' dalam konteks kalimat tersebut adalah...",
+        options: [
+          "Anggota keluarga yang bertugas menjaga kesehatan fisik.",
+          "Orang yang menjadi penopang utama nafkah atau kehidupan keluarga.",
+          "Pekerja bengkel yang ahli memperbaiki rangka sepeda motor.",
+          "Anak tertua yang selalu mendapatkan warisan paling banyak."
+        ],
+        correctIndex: 1,
+        explanation: "Ungkapan 'tulang punggung' bermakna kias sebagai pihak yang menjadi sandaran atau penopang utama kebutuhan hidup keluarga."
+      },
+      {
+        id: 16,
+        genre: "Teks Berita",
+        category: "Ungkapan & Kata Kias",
+        passage: "Tim nasional basket pelajar Indonesia tampil gemilang dan sukses mencuri perhatian para pengamat olahraga Asia berkat strategi pertahanan mereka yang disiplin.",
+        question: "Makna ungkapan 'mencuri perhatian' pada kutipan berita di atas adalah...",
+        options: [
+          "Mengambil barang milik penonton secara diam-diam.",
+          "Menarik minat dan kekaguman banyak orang karena prestasi.",
+          "Mengganggu konsentrasi tim lawan saat pertandingan berlangsung.",
+          "Meminta pengamat olahraga memberikan nilai tambahan."
+        ],
+        correctIndex: 1,
+        explanation: "Ungkapan 'mencuri perhatian' berarti berhasil membuat banyak orang tertarik dan terkesan oleh penampilan atau pencapaian."
+      },
+      {
+        id: 17,
+        genre: "Cerpen",
+        category: "Majas & Kata Kias",
+        passage: "Angin malam berbisik lirih di sela-sela dedaunan bambu, seolah ikut menenangkan hati Nadin yang sedang dilanda kegelisahan menjelang pengumuman kelulusan.",
+        question: "Makna majas personifikasi 'angin malam berbisik lirih' dalam kutipan tersebut adalah...",
+        options: [
+          "Angin malam menyampaikan rahasia kelulusan kepada Nadin.",
+          "Hembusan angin lembut di pepohonan menghadirkan suasana damai.",
+          "Nadin mendengar suara orang berbicara di balik rumpun bambu.",
+          "Badai kencang melanda desa Nadin pada malam pengumuman."
+        ],
+        correctIndex: 1,
+        explanation: "Majas personifikasi tersebut menggambarkan hembusan angin malam yang pelan dan sejuk sehingga memberikan ketenangan batin bagi tokoh Nadin."
+      },
+      {
+        id: 18,
+        genre: "Teks Eksposisi",
+        category: "Ungkapan & Kata Kias",
+        passage: "Di tengah derasnya arus informasi digital, masyarakat diimbau agar tidak menelan mentah-mentah setiap berita sensasional yang beredar di grup percakapan.",
+        question: "Arti ungkapan 'menelan mentah-mentah' dalam kalimat tersebut adalah...",
+        options: [
+          "Membaca berita sambil menyantap makanan yang belum dimasak.",
+          "Mempercayai informasi begitu saja tanpa memeriksa kebenarannya.",
+          "Menghapus seluruh pesan yang masuk ke dalam grup percakapan.",
+          "Menyebarkan ulang berita kepada semua kontak di ponsel."
+        ],
+        correctIndex: 1,
+        explanation: "'Menelan mentah-mentah' adalah ungkapan kias yang berarti menerima atau mempercayai suatu kabar tanpa menyaring atau mengecek faktanya terlebih dahulu."
+      },
+      {
+        id: 19,
+        genre: "Cerpen",
+        category: "Ungkapan & Kata Kias",
+        passage: "Walaupun berasal dari keluarga yang berkecukupan dan sering menjuarai olimpiade sains, Laras tetap dikenal rendah hati dan ramah kepada semua teman di sekolahnya.",
+        question: "Makna ungkapan 'rendah hati' yang melekat pada tokoh Laras adalah...",
+        options: [
+          "Merasa minder dan tidak percaya diri saat berbicara.",
+          "Tidak sombong dan tidak suka memamerkan kelebihan diri.",
+          "Mudah menyerah ketika menghadapi soal olimpiade yang sulit.",
+          "Selalu mengalah meskipun berada di pihak yang benar."
+        ],
+        correctIndex: 1,
+        explanation: "Ungkapan 'rendah hati' bermakna tidak angkuh atau tidak sombong, berbeda dengan 'rendah diri' yang berarti minder."
+      },
+      {
+        id: 20,
+        genre: "Teks Berita",
+        category: "Majas & Kata Kias",
+        passage: "Perpustakaan sekolah kini bertransformasi menjadi jendela dunia digital yang menghubungkan para siswa dengan ribuan referensi ilmiah dari berbagai negara.",
+        question: "Makna kata kias 'jendela dunia' dalam teks berita tersebut adalah...",
+        options: [
+          "Ruangan perpustakaan yang memiliki banyak jendela kaca besar.",
+          "Sarana untuk membuka wawasan dan memperoleh pengetahuan luas.",
+          "Pameran arsitektur bangunan modern dari berbagai negara.",
+          "Aplikasi pemantau cuaca global yang dipasang di sekolah."
+        ],
+        correctIndex: 1,
+        explanation: "Metafora 'jendela dunia' melambangkan sumber ilmu pengetahuan yang memungkinkan pembaca mengenal berbagai informasi dari seluruh penjuru dunia."
+      },
+      {
+        id: 21,
+        genre: "Fabel",
+        category: "Ungkapan & Kata Kias",
+        passage: "Sang Singa akhirnya menyadari bahwa kesombongannya selama ini hanya menjadi batu sandungan yang menjatuhkan wibawanya di hadapan penghuni rimba.",
+        question: "Makna ungkapan 'batu sandungan' pada kutipan fabel tersebut adalah...",
+        options: [
+          "Batu besar yang menghalangi jalan masuk ke gua singa.",
+          "Penghalang atau penyebab kegagalan dalam mencapai kebaikan.",
+          "Senjata andalan Singa untuk melindungi wilayah kekuasaannya.",
+          "Tempat berkumpulnya seluruh penghuni rimba saat musyawarah."
+        ],
+        correctIndex: 1,
+        explanation: "Ungkapan 'batu sandungan' bermakna kias sebagai rintangan atau faktor penghambat yang menyebabkan seseorang tergelincir atau gagal."
+      },
+
+      // --- KELOMPOK D: WATAK TOKOH, LATAR SUASANA & SEBAB-AKIBAT IMPLISIT ---
+      {
+        id: 22,
+        genre: "Cerpen",
+        category: "Watak Tokoh Implisit",
+        passage: "Saat melihat sebuah dompet terjatuh di koridor sekolah yang sepi, Bagas segera memungutnya dan langsung menyerahkannya ke ruang tata usaha tanpa membuka isinya sedikit pun.",
+        question: "Watak tokoh Bagas yang tergambar secara tersirat melalui tindakannya adalah...",
+        options: [
+          "Ceroboh dan tergesa-gesa.",
+          "Jujur dan dapat dipercaya.",
+          "Pemalu dan takut ditegur guru.",
+          "Acuh tak acuh terhadap lingkungan."
+        ],
+        correctIndex: 1,
+        explanation: "Meskipun tidak disebutkan kata 'jujur', tindakan Bagas menyerahkan dompet temuan di tempat sepi tanpa membuka isinya menunjukkan kejujuran dan integritas."
+      },
+      {
+        id: 23,
+        genre: "Cerpen",
+        category: "Latar Suasana Implisit",
+        passage: "Detak jarum jam dinding terdengar begitu nyaring di ruang tunggu rumah sakit itu; berkali-kali Ibu meremas jemarinya sambil menatap pintu ruang operasi yang masih tertutup rapat.",
+        question: "Latar suasana yang tergambar secara implisit dalam kutipan cerpen tersebut adalah...",
+        options: [
+          "Meriah dan penuh kegembiraan.",
+          "Tegang dan penuh kecemasan.",
+          "Santai dan penuh canda tawa.",
+          "Sibuk dan bising oleh keramaian."
+        ],
+        correctIndex: 1,
+        explanation: "Suara detak jam yang terasa nyaring (hening), gerakan meremas jemari, dan tatapan ke pintu ruang operasi membangun suasana tegang dan cemas."
+      },
+      {
+        id: 24,
+        genre: "Teks Berita",
+        category: "Sebab-Akibat Implisit",
+        passage: "Hujan lebat disertai angin kencang mengguyur kawasan hulu sejak sore hari; menjelang tengah malam, sirine peringatan dini di bantaran sungai mulai dibunyikan petugas.",
+        question: "Hubungan sebab-akibat tersirat yang dapat disimpulkan dari kutipan tersebut adalah...",
+        options: [
+          "Sirine dibunyikan petugas untuk menghentikan hujan lebat di kawasan hulu.",
+          "Curah hujan tinggi di hulu meningkatkan debit air sungai dan berpotensi banjir.",
+          "Angin kencang merusak seluruh menara pemantau cuaca di bantaran sungai.",
+          "Warga di bantaran sungai meminta petugas membunyikan sirine setiap malam."
+        ],
+        correctIndex: 1,
+        explanation: "Secara logis dan implisit, hujan deras di hulu menyebabkan air sungai meluap menuju hilir sehingga petugas membunyikan sirine bahaya banjir."
+      },
+      {
+        id: 25,
+        genre: "Fabel",
+        category: "Watak Tokoh Implisit",
+        passage: "Setiap kali teman-temannya bergotong royong mengangkat ranting untuk jembatan sungai, Landak selalu beralasan durinya sedang sakit, padahal ia berlari paling depan saat pembagian buah manis tiba.",
+        question: "Watak tokoh Landak berdasarkan perilaku yang diceritakan adalah...",
+        options: [
+          "Cerdik dan suka menolong sesama.",
+          "Pemalas dan mementingkan diri sendiri.",
+          "Pemberani dan berjiwa pemimpin.",
+          "Sabar dan senang mengalah."
+        ],
+        correctIndex: 1,
+        explanation: "Landak berpura-pura sakit saat kerja bakti namun bersemangat saat pembagian hasil, yang menyiratkan watak pemalas dan egois."
+      },
+      {
+        id: 26,
+        genre: "Cerpen",
+        category: "Latar Waktu & Suasana",
+        passage: "Embun pagi masih bergelayut di ujung daun teh ketika para pemetik mulai menuruni lereng bukit dengan keranjang rotan di punggung dan senyum semangat di wajah mereka.",
+        question: "Latar waktu dan suasana yang tersirat dalam kutipan tersebut adalah...",
+        options: [
+          "Pagi hari yang sejuk dan penuh semangat kerja.",
+          "Siang hari yang terik dan melelahkan.",
+          "Sore hari menjelang matahari terbenam yang sunyi.",
+          "Malam hari yang dingin dan mencekam."
+        ],
+        correctIndex: 0,
+        explanation: "Keberadaan embun di ujung daun teh menandakan waktu pagi yang sejuk, dipadukan dengan senyum para pemetik yang menunjukkan suasana penuh semangat."
+      },
+      {
+        id: 27,
+        genre: "Teks Eksposisi",
+        category: "Sebab-Akibat Implisit",
+        passage: "Kebiasaan membuang sampah ke saluran drainase membuat aliran air tersumbat oleh endapan plastik dan lumpur, sehingga genangan air setinggi lutut kerap muncul meski hujan hanya turun sebentar.",
+        question: "Simpulan hubungan sebab-akibat yang tepat berdasarkan teks tersebut adalah...",
+        options: [
+          "Hujan ringan selalu menyebabkan banjir di setiap wilayah perkotaan.",
+          "Tersumbatnya saluran air oleh sampah memicu banjir lokal saat hujan turun.",
+          "Endapan lumpur di saluran drainase bermanfaat menyuburkan tanaman kota.",
+          "Genangan air setinggi lutut mempercepat aliran sampah menuju laut."
+        ],
+        correctIndex: 1,
+        explanation: "Sebab utamanya adalah penyumbatan drainase oleh sampah plastik dan lumpur, yang mengakibatkan munculnya genangan air (akibat) walau hujan singkat."
+      },
+      {
+        id: 28,
+        genre: "Cerpen",
+        category: "Watak Tokoh Implisit",
+        passage: "Sebelum memutuskan konsep panggung pentas seni, Raka meminta pendapat seluruh anggota panitia dan mencatat setiap usulan di papan tulis dengan saksama.",
+        question: "Sifat kepemimpinan Raka yang tergambar secara tersirat adalah...",
+        options: [
+          "Otoriter dan memaksakan kehendak pribadi.",
+          "Demokratis dan menghargai pendapat orang lain.",
+          "Ragu-ragu dan tidak berani mengambil keputusan.",
+          "Tergesa-gesa ingin segera menyelesaikan rapat."
+        ],
+        correctIndex: 1,
+        explanation: "Raka mendengarkan dan mencatat semua masukan anggota sebelum memutuskan sesuatu, yang merupakan ciri sikap demokratis dan menghargai sesama."
+      }
+    ];
+
+    /**
+     * =========================================================================
+     * 3. KONFIGURASI PAPAN 5x5 ZIG-ZAG, TANGGA (LADDER) & ULAR (SNAKE)
+     * =========================================================================
+     */
+    const BOARD_SIZE = 5; // 5x5 = 25 Petak
+    const TOTAL_TILES = 25;
+
+    // Rute Tangga (Kaki Tangga -> Puncak Tangga) - Semua kaki tangga adalah Kotak Spesial (⭐)
+    const LADDERS = {
+      3: 12,
+      5: 15,
+      8: 17,
+      13: 22,
+      18: 23
+    };
+
+    // Rute Ular (Kepala Ular -> Ekor Ular) - Semua kepala ular adalah Kotak Spesial (⭐)
+    const SNAKES = {
+      10: 2,
+      14: 6,
+      19: 9,
+      24: 16
+    };
+
+    const STORAGE_KEY = 'detektif_makna_ular_tangga_leaderboard_v1';
+
+    // State Utama Aplikasi
+    let gameState = {
+      teamName: 'Kelas 9A - SMPN 1 Nusantara',
+      players: [
+        { id: 1, name: 'Detektif Merah', pos: 1, rolls: 0, correct: 0, color: 'red' },
+        { id: 2, name: 'Detektif Biru', pos: 1, rolls: 0, correct: 0, color: 'blue' }
+      ],
+      currentTurn: 0, // 0 = Pemain 1, 1 = Pemain 2
+      isBusy: false,
+      diceValue: 6,
+      usedQuestionIds: [],
+      pendingSpecialEvent: null // { type: 'ladder' | 'snake', from: number, to: number, question: object }
+    };
+
+    let resetConfirmPending = false;
+    let resetConfirmTimer = null;
+
+    /**
+     * =========================================================================
+     * 4. INISIALISASI & NAVIGASI HALAMAN
+     * =========================================================================
+     */
+    window.addEventListener('DOMContentLoaded', () => {
+      renderDiceFace(6);
+      buildBoardGrid();
+      seedInitialLeaderboardIfEmpty();
+      renderLeaderboard();
+
+      // Shortcut keyboard spasi untuk mengocok dadu saat di layar permainan
+      window.addEventListener('keydown', (e) => {
+        if (e.code === 'Space') {
+          const gameVisible = !document.getElementById('game-screen').classList.contains('hidden');
+          const quizOpen = !document.getElementById('quiz-modal').classList.contains('hidden');
+          const overOpen = !document.getElementById('gameover-modal').classList.contains('hidden');
+          const rulesOpen = !document.getElementById('rules-modal').classList.contains('hidden');
+          const quitOpen = !document.getElementById('quit-modal').classList.contains('hidden');
+
+          if (gameVisible && !quizOpen && !overOpen && !rulesOpen && !quitOpen && !gameState.isBusy) {
+            e.preventDefault();
+            rollDice();
+          }
+        }
+      });
+
+      // Responsif saat layar diubah ukurannya
+      window.addEventListener('resize', () => {
+        if (!document.getElementById('game-screen').classList.contains('hidden')) {
+          drawBoardConnectors();
+          updatePawnPositions(false);
+        }
+      });
+    });
+
+    function navigateTo(screenName) {
+      const screens = ['start', 'game', 'leaderboard'];
+      screens.forEach(s => {
+        const el = document.getElementById(`${s}-screen`);
+        if (el) el.classList.add('hidden');
+      });
+
+      const target = document.getElementById(`${screenName}-screen`);
+      if (target) target.classList.remove('hidden');
+
+      if (screenName === 'game') {
+        requestAnimationFrame(() => {
+          drawBoardConnectors();
+          updatePawnPositions(false);
+        });
+      } else if (screenName === 'leaderboard') {
+        renderLeaderboard();
+      }
+    }
+
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      const styles = {
+        info: 'bg-slate-800 text-white border-slate-600',
+        warn: 'bg-amber-500 text-slate-950 border-amber-700',
+        success: 'bg-emerald-600 text-white border-emerald-800',
+        danger: 'bg-rose-600 text-white border-rose-800'
+      };
+      toast.className = `${styles[type] || styles.info} px-4 py-2.5 rounded-2xl shadow-xl border-2 font-bold text-xs sm:text-sm text-center animate-modal-pop`;
+      toast.textContent = message;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.25s ease';
+        setTimeout(() => toast.remove(), 260);
+      }, 2600);
+    }
+
+    /**
+     * =========================================================================
+     * 5. LOGIKA START SCREEN & MEMULAI PERMAINAN
+     * =========================================================================
+     */
+    function handleStartGame(event) {
+      event.preventDefault();
+      sfx.init();
+
+      const teamInput = document.getElementById('input-team').value.trim();
+      const p1Input = document.getElementById('input-p1').value.trim();
+      const p2Input = document.getElementById('input-p2').value.trim();
+
+      if (!teamInput || !p1Input || !p2Input) {
+        showToast('⚠️ Mohon isi Kelas & Sekolah serta nama kedua pemain terlebih dahulu!', 'warn');
+        return;
+      }
+
+      if (p1Input.toLowerCase() === p2Input.toLowerCase()) {
+        showToast('⚠️ Nama Pemain 1 dan Pemain 2 sebaiknya berbeda agar mudah dibedakan!', 'warn');
+        return;
+      }
+
+      startNewMatch(teamInput, p1Input, p2Input);
+    }
+
+    function startNewMatch(teamName, p1Name, p2Name) {
+      gameState = {
+        teamName,
+        players: [
+          { id: 1, name: p1Name, pos: 1, rolls: 0, correct: 0, color: 'red' },
+          { id: 2, name: p2Name, pos: 1, rolls: 0, correct: 0, color: 'blue' }
+        ],
+        currentTurn: 0,
+        isBusy: false,
+        diceValue: 6,
+        usedQuestionIds: [],
+        pendingSpecialEvent: null
+      };
+
+      // Update UI Game Screen
+      document.getElementById('display-team-name').textContent = teamName;
+      document.getElementById('name-p1').textContent = p1Name;
+      document.getElementById('name-p2').textContent = p2Name;
+
+      const logList = document.getElementById('game-log-list');
+      logList.innerHTML = `
+        <li class="bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-100">
+          🔍 Misi dimulai untuk <strong>${escapeHtml(teamName)}</strong>! ${escapeHtml(p1Name)} vs ${escapeHtml(p2Name)}.
+        </li>
+      `;
+
+      renderDiceFace(6);
+      updateTurnUI();
+      navigateTo('game');
+      sfx.playStep(3);
+    }
+
+    function rematchSamePlayers() {
+      document.getElementById('gameover-modal').classList.add('hidden');
+      startNewMatch(
+        gameState.teamName,
+        gameState.players[0].name,
+        gameState.players[1].name
+      );
+    }
+
+    /**
+     * =========================================================================
+     * 6. KONSTRUKSI PAPAN ZIG-ZAG 5x5, KOORDINAT SVG & POSISI PION
+     * =========================================================================
+     */
+    function buildBoardGrid() {
+      const grid = document.getElementById('board-grid');
+      grid.innerHTML = '';
+
+      // Baris visual dari atas (visualRow = 0 -> petak 21..25) ke bawah (visualRow = 4 -> petak 1..5)
+      for (let visualRow = 0; visualRow < BOARD_SIZE; visualRow++) {
+        const boardRowFromBottom = (BOARD_SIZE - 1) - visualRow; // 4 di atas, 0 di bawah
+        const isLeftToRight = boardRowFromBottom % 2 === 0;
+
+        for (let col = 0; col < BOARD_SIZE; col++) {
+          const offset = isLeftToRight ? col : (BOARD_SIZE - 1 - col);
+          const tileNum = boardRowFromBottom * BOARD_SIZE + offset + 1;
+
+          const isLadderStart = Object.prototype.hasOwnProperty.call(LADDERS, tileNum);
+          const isSnakeHead = Object.prototype.hasOwnProperty.call(SNAKES, tileNum);
+          const isSpecial = isLadderStart || isSnakeHead;
+          const isStart = tileNum === 1;
+          const isFinish = tileNum === TOTAL_TILES;
+
+          const tileEl = document.createElement('div');
+          tileEl.id = `tile-${tileNum}`;
+          tileEl.dataset.tile = tileNum;
+
+          // Skema warna ceria bergantian + sorotan khusus
+          let bgClass = tileNum % 2 === 0
+            ? 'bg-amber-50 border-amber-200'
+            : 'bg-white border-amber-200';
+
+          if (isStart) {
+            bgClass = 'bg-gradient-to-br from-sky-100 to-indigo-100 border-indigo-400';
+          } else if (isFinish) {
+            bgClass = 'bg-gradient-to-br from-amber-200 via-yellow-200 to-orange-200 border-amber-500';
+          } else if (isLadderStart) {
+            bgClass = 'bg-gradient-to-br from-emerald-50 to-teal-100 border-emerald-400';
+          } else if (isSnakeHead) {
+            bgClass = 'bg-gradient-to-br from-rose-50 to-pink-100 border-rose-400';
+          }
+
+          tileEl.className = `relative rounded-xl sm:rounded-2xl border-2 ${bgClass} p-1 sm:p-1.5 flex flex-col justify-between shadow-sm transition-transform`;
+
+          // Nomor Petak & Label
+          let topBadge = `<span class="font-fredoka font-bold text-xs sm:text-sm ${isFinish ? 'text-amber-900' : 'text-slate-700'} leading-none">${tileNum}</span>`;
+          let centerContent = '';
+          let bottomLabel = '';
+
+          if (isStart) {
+            bottomLabel = `<span class="text-[9px] sm:text-[10px] font-extrabold text-indigo-700 bg-white/80 px-1.5 py-0.5 rounded-md self-center">MULAI</span>`;
+          } else if (isFinish) {
+            centerContent = `<div class="text-base sm:text-xl text-center leading-none">🏆</div>`;
+            bottomLabel = `<span class="text-[9px] sm:text-[10px] font-extrabold text-amber-900 bg-white/80 px-1.5 py-0.5 rounded-md self-center">FINIS</span>`;
+          } else if (isLadderStart) {
+            topBadge += `<span class="animate-star-badge text-xs sm:text-sm leading-none" title="Kotak Tangga Petunjuk">⭐</span>`;
+            bottomLabel = `<span class="text-[9px] sm:text-[10px] font-extrabold text-emerald-800 bg-emerald-200/80 px-1 rounded self-end">🪜→${LADDERS[tileNum]}</span>`;
+          } else if (isSnakeHead) {
+            topBadge += `<span class="animate-star-badge text-xs sm:text-sm leading-none" title="Kotak Jebakan Ular">⭐</span>`;
+            bottomLabel = `<span class="text-[9px] sm:text-[10px] font-extrabold text-rose-800 bg-rose-200/80 px-1 rounded self-end">🐍→${SNAKES[tileNum]}</span>`;
+          }
+
+          tileEl.innerHTML = `
+            <div class="flex items-center justify-between w-full">${topBadge}</div>
+            ${centerContent}
+            <div class="flex w-full justify-center">${bottomLabel}</div>
+          `;
+
+          grid.appendChild(tileEl);
+        }
+      }
+    }
+
+    function getTileCenterCoords(tileNum) {
+      const wrapper = document.getElementById('board-wrapper');
+      const tile = document.getElementById(`tile-${tileNum}`);
+      if (!wrapper || !tile) return { x: 0, y: 0 };
+
+      const wRect = wrapper.getBoundingClientRect();
+      const tRect = tile.getBoundingClientRect();
+
+      return {
+        x: (tRect.left - wRect.left) + tRect.width / 2,
+        y: (tRect.top - wRect.top) + tRect.height / 2
+      };
+    }
+
+    /**
+     * Menggambar Visual Tangga & Ular dengan SVG di atas papan 5x5
+     */
+    function drawBoardConnectors() {
+      const svg = document.getElementById('board-svg-overlay');
+      const wrapper = document.getElementById('board-wrapper');
+      if (!svg || !wrapper) return;
+
+      const width = wrapper.clientWidth;
+      const height = wrapper.clientHeight;
+      if (width === 0 || height === 0) return;
+
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+      let svgMarkup = '';
+
+      // 1. Gambar Semua Tangga (Hijau/Emas)
+      Object.entries(LADDERS).forEach(([fromStr, toNum]) => {
+        const from = getTileCenterCoords(Number(fromStr));
+        const to = getTileCenterCoords(Number(toNum));
+
+        const dx = to.x - from.x;
+        const dy = to.y - from.y;
+        const len = Math.hypot(dx, dy);
+        if (len === 0) return;
+
+        const ux = dx / len;
+        const uy = dy / len;
+        // Vektor tegak lurus untuk dua rel tangga
+        const railOffset = Math.max(7, width * 0.017);
+        const px = -uy * railOffset;
+        const py = ux * railOffset;
+
+        const x1a = from.x + px, y1a = from.y + py;
+        const x2a = to.x + px,   y2a = to.y + py;
+        const x1b = from.x - px, y1b = from.y - py;
+        const x2b = to.x - px,   y2b = to.y - py;
+
+        // Anak tangga
+        const stepSpacing = Math.max(14, width * 0.036);
+        const steps = Math.max(3, Math.floor(len / stepSpacing));
+        let rungs = '';
+        for (let i = 1; i < steps; i++) {
+          const t = i / steps;
+          const rx1 = x1a + (x2a - x1a) * t;
+          const ry1 = y1a + (y2a - y1a) * t;
+          const rx2 = x1b + (x2b - x1b) * t;
+          const ry2 = y1b + (y2b - y1b) * t;
+          rungs += `<line x1="${rx1.toFixed(1)}" y1="${ry1.toFixed(1)}" x2="${rx2.toFixed(1)}" y2="${ry2.toFixed(1)}" stroke="#059669" stroke-width="3.5" stroke-linecap="round" opacity="0.72" />`;
+        }
+
+        svgMarkup += `
+          <g>
+            <line x1="${x1a.toFixed(1)}" y1="${y1a.toFixed(1)}" x2="${x2a.toFixed(1)}" y2="${y2a.toFixed(1)}" stroke="#047857" stroke-width="4.5" stroke-linecap="round" opacity="0.78" />
+            <line x1="${x1b.toFixed(1)}" y1="${y1b.toFixed(1)}" x2="${x2b.toFixed(1)}" y2="${y2b.toFixed(1)}" stroke="#047857" stroke-width="4.5" stroke-linecap="round" opacity="0.78" />
+            ${rungs}
+          </g>
+        `;
+      });
+
+      // 2. Gambar Semua Ular (Kurva Gelombang Koral/Ungu)
+      Object.entries(SNAKES).forEach(([headStr, tailNum]) => {
+        const head = getTileCenterCoords(Number(headStr));
+        const tail = getTileCenterCoords(Number(tailNum));
+
+        const dx = tail.x - head.x;
+        const dy = tail.y - head.y;
+        const len = Math.hypot(dx, dy);
+        if (len === 0) return;
+
+        const nx = -dy / len;
+        const ny = dx / len;
+        const waveAmp = Math.max(14, width * 0.035);
+
+        const c1x = head.x + dx * 0.33 + nx * waveAmp;
+        const c1y = head.y + dy * 0.33 + ny * waveAmp;
+        const c2x = head.x + dx * 0.66 - nx * waveAmp;
+        const c2y = head.y + dy * 0.66 - ny * waveAmp;
+
+        const pathD = `M ${head.x.toFixed(1)} ${head.y.toFixed(1)} C ${c1x.toFixed(1)} ${c1y.toFixed(1)}, ${c2x.toFixed(1)} ${c2y.toFixed(1)}, ${tail.x.toFixed(1)} ${tail.y.toFixed(1)}`;
+
+        svgMarkup += `
+          <g opacity="0.78">
+            <path d="${pathD}" fill="none" stroke="#E11D48" stroke-width="7.5" stroke-linecap="round" />
+            <path d="${pathD}" fill="none" stroke="#FDA4AF" stroke-width="2.5" stroke-dasharray="6 7" stroke-linecap="round" />
+            <circle cx="${head.x.toFixed(1)}" cy="${head.y.toFixed(1)}" r="6.5" fill="#BE123C" />
+            <circle cx="${(head.x - 2.2).toFixed(1)}" cy="${(head.y - 1.5).toFixed(1)}" r="1.4" fill="#FFFFFF" />
+            <circle cx="${(head.x + 2.2).toFixed(1)}" cy="${(head.y - 1.5).toFixed(1)}" r="1.4" fill="#FFFFFF" />
+          </g>
+        `;
+      });
+
+      svg.innerHTML = svgMarkup;
+    }
+
+    function updatePawnPositions(animateHop = true) {
+      const p1 = gameState.players[0];
+      const p2 = gameState.players[1];
+
+      const c1 = getTileCenterCoords(p1.pos);
+      const c2 = getTileCenterCoords(p2.pos);
+
+      const pawn1El = document.getElementById('pawn-p1');
+      const pawn2El = document.getElementById('pawn-p2');
+
+      // Jika berada di petak yang sama, geser sedikit ke kiri dan kanan agar tidak saling menutupi
+      const sameTile = p1.pos === p2.pos;
+      const offset1 = sameTile ? -11 : 0;
+      const offset2 = sameTile ? 11 : 0;
+
+      pawn1El.style.left = `${c1.x + offset1}px`;
+      pawn1El.style.top = `${c1.y}px`;
+
+      pawn2El.style.left = `${c2.x + offset2}px`;
+      pawn2El.style.top = `${c2.y}px`;
+
+      if (animateHop) {
+        const activePawn = gameState.currentTurn === 0 ? pawn1El : pawn2El;
+        activePawn.classList.remove('pawn-hopping');
+        void activePawn.offsetWidth; // trigger reflow
+        activePawn.classList.add('pawn-hopping');
+      }
+
+      // Update angka posisi & lemparan di kartu pemain
+      document.getElementById('pos-p1').textContent = p1.pos;
+      document.getElementById('rolls-p1').textContent = p1.rolls;
+      document.getElementById('pos-p2').textContent = p2.pos;
+      document.getElementById('rolls-p2').textContent = p2.rolls;
+    }
+
+    /**
+     * =========================================================================
+     * 7. VISUAL DADU & MEKANIKA LEMPAR DADU + PERGERAKAN PION
+     * =========================================================================
+     */
+    function renderDiceFace(val) {
+      const svg = document.getElementById('dice-svg');
+      const pipCoords = {
+        1: [[50, 50]],
+        2: [[28, 28], [72, 72]],
+        3: [[28, 28], [50, 50], [72, 72]],
+        4: [[28, 28], [72, 28], [28, 72], [72, 72]],
+        5: [[28, 28], [72, 28], [50, 50], [28, 72], [72, 72]],
+        6: [[28, 25], [72, 25], [28, 50], [72, 50], [28, 75], [72, 75]]
+      };
+
+      const dots = pipCoords[val] || pipCoords[1];
+      const dotColor = val === 6 || val === 1 ? '#E11D48' : '#1E293B';
+
+      svg.innerHTML = dots.map(([cx, cy]) =>
+        `<circle cx="${cx}" cy="${cy}" r="9.5" fill="${dotColor}" />`
+      ).join('');
+    }
+
+    function updateTurnUI() {
+      const isP1 = gameState.currentTurn === 0;
+      const activePlayer = gameState.players[gameState.currentTurn];
+
+      const cardP1 = document.getElementById('card-p1');
+      const cardP2 = document.getElementById('card-p2');
+      const badgeP1 = document.getElementById('badge-turn-p1');
+      const badgeP2 = document.getElementById('badge-turn-p2');
+      const turnBanner = document.getElementById('turn-banner');
+      const turnPlayerName = document.getElementById('turn-player-name');
+      const rollBtn = document.getElementById('btn-roll-dice');
+
+      turnPlayerName.textContent = activePlayer.name;
+
+      if (isP1) {
+        cardP1.className = 'rounded-2xl p-3.5 bg-white border-4 border-rose-500 shadow-md transition-all';
+        cardP2.className = 'rounded-2xl p-3.5 bg-white/80 border-2 border-slate-200 shadow-sm opacity-75 transition-all';
+        badgeP1.classList.remove('hidden');
+        badgeP2.classList.add('hidden');
+        turnBanner.className = 'inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100 text-rose-800 font-fredoka font-semibold text-sm sm:text-base mb-4';
+        turnBanner.firstElementChild.textContent = '🔴';
+      } else {
+        cardP2.className = 'rounded-2xl p-3.5 bg-white border-4 border-sky-500 shadow-md transition-all';
+        cardP1.className = 'rounded-2xl p-3.5 bg-white/80 border-2 border-slate-200 shadow-sm opacity-75 transition-all';
+        badgeP2.classList.remove('hidden');
+        badgeP1.classList.add('hidden');
+        turnBanner.className = 'inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-800 font-fredoka font-semibold text-sm sm:text-base mb-4';
+        turnBanner.firstElementChild.textContent = '🔵';
+      }
+
+      rollBtn.disabled = gameState.isBusy;
+    }
+
+    function addGameLog(htmlMessage) {
+      const logList = document.getElementById('game-log-list');
+      const li = document.createElement('li');
+      li.className = 'bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200 animate-modal-pop';
+      li.innerHTML = htmlMessage;
+      logList.prepend(li);
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function rollDice() {
+      if (gameState.isBusy) return;
+      gameState.isBusy = true;
+      updateTurnUI();
+
+      const activePlayer = gameState.players[gameState.currentTurn];
+      const diceBox = document.getElementById('dice-box');
+      const statusText = document.getElementById('dice-status-text');
+
+      sfx.playDiceRoll();
+      diceBox.classList.remove('animate-dice-roll');
+      void diceBox.offsetWidth;
+      diceBox.classList.add('animate-dice-roll');
+      statusText.textContent = `${activePlayer.name} sedang mengocok dadu...`;
+
+      // Animasi acak angka selama 520ms
+      const rollIntervals = 7;
+      for (let i = 0; i < rollIntervals; i++) {
+        renderDiceFace(Math.floor(Math.random() * 6) + 1);
+        await sleep(70);
+      }
+
+      const rolled = Math.floor(Math.random() * 6) + 1;
+      gameState.diceValue = rolled;
+      activePlayer.rolls += 1;
+      renderDiceFace(rolled);
+
+      statusText.textContent = `Dadu menunjukkan angka ${rolled}! Melangkah ${rolled} petak...`;
+      addGameLog(`🎲 <strong>${escapeHtml(activePlayer.name)}</strong> melempar dadu: <strong>${rolled}</strong>.`);
+
+      // Gerakkan pion langkah demi langkah hingga maksimal petak 25
+      const targetPos = Math.min(TOTAL_TILES, activePlayer.pos + rolled);
+      let stepIdx = 0;
+      while (activePlayer.pos < targetPos) {
+        activePlayer.pos += 1;
+        sfx.playStep(stepIdx++);
+        updatePawnPositions(true);
+        await sleep(270);
+      }
+
+      // Cek apakah mencapai Finis (Petak 25)
+      if (activePlayer.pos >= TOTAL_TILES) {
+        handlePlayerVictory(activePlayer);
+        return;
+      }
+
+      // Cek apakah mendarat di Kotak Spesial (⭐ Tangga atau ⭐ Ular)
+      const currentTile = activePlayer.pos;
+      if (Object.prototype.hasOwnProperty.call(LADDERS, currentTile)) {
+        const dest = LADDERS[currentTile];
+        sfx.playSpecialTile();
+        statusText.textContent = `⭐ ${activePlayer.name} menemukan Tangga Petunjuk di Petak ${currentTile}!`;
+        addGameLog(`⭐🪜 <strong>${escapeHtml(activePlayer.name)}</strong> mendarat di Tangga Petak ${currentTile} (menuju ${dest})!`);
+        await sleep(450);
+        triggerSpecialQuiz('ladder', currentTile, dest);
+        return;
+      }
+
+      if (Object.prototype.hasOwnProperty.call(SNAKES, currentTile)) {
+        const dest = SNAKES[currentTile];
+        sfx.playSpecialTile();
+        statusText.textContent = `⭐ ${activePlayer.name} terkena Jebakan Ular di Petak ${currentTile}!`;
+        addGameLog(`⭐🐍 <strong>${escapeHtml(activePlayer.name)}</strong> mendarat di Ular Petak ${currentTile} (ancaman turun ke ${dest})!`);
+        await sleep(450);
+        triggerSpecialQuiz('snake', currentTile, dest);
+        return;
+      }
+
+      // Petak biasa -> Ganti giliran ke pemain berikutnya
+      switchTurn();
+    }
+
+    function switchTurn() {
+      gameState.currentTurn = gameState.currentTurn === 0 ? 1 : 0;
+      gameState.isBusy = false;
+      const nextPlayer = gameState.players[gameState.currentTurn];
+      document.getElementById('dice-status-text').textContent = `Giliran ${nextPlayer.name}! Kocok dadu untuk melangkah.`;
+      updateTurnUI();
+    }
+
+    /**
+     * =========================================================================
+     * 8. SISTEM KUIS INTERAKTIF (MODAL ANALISIS MAKNA TERSURAT & TERSIRAT)
+     * =========================================================================
+     */
+    function getNextQuestion() {
+      let available = QUESTION_BANK.filter(q => !gameState.usedQuestionIds.includes(q.id));
+      if (available.length === 0) {
+        gameState.usedQuestionIds = [];
+        available = [...QUESTION_BANK];
+      }
+      const chosen = available[Math.floor(Math.random() * available.length)];
+      gameState.usedQuestionIds.push(chosen.id);
+      return chosen;
+    }
+
+    function triggerSpecialQuiz(type, fromTile, toTile) {
+      const question = getNextQuestion();
+      gameState.pendingSpecialEvent = {
+        type,
+        from: fromTile,
+        to: toTile,
+        question,
+        answeredCorrectly: false
+      };
+
+      const headerEl = document.getElementById('quiz-modal-header');
+      const typeBadge = document.getElementById('quiz-type-badge');
+      const catBadge = document.getElementById('quiz-category-badge');
+      const missionTitle = document.getElementById('quiz-mission-title');
+      const passageEl = document.getElementById('quiz-passage');
+      const questionEl = document.getElementById('quiz-question');
+      const optionsContainer = document.getElementById('quiz-options');
+      const feedbackBox = document.getElementById('quiz-feedback-box');
+
+      // Sesuaikan tema visual modal antara Tangga (Hijau) vs Ular (Merah/Koral)
+      if (type === 'ladder') {
+        headerEl.className = 'p-4 sm:p-5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white';
+        typeBadge.textContent = '⭐🪜 KOTAK TANGGA PETUNJUK';
+        missionTitle.textContent = `Pecahkan analisis makna ini untuk naik ke Petak ${toTile}!`;
+      } else {
+        headerEl.className = 'p-4 sm:p-5 bg-gradient-to-r from-rose-600 to-pink-600 text-white';
+        typeBadge.textContent = '⭐🐍 KOTAK JEBAKAN ULAR';
+        missionTitle.textContent = `Jawab tepat agar tidak terkecoh dan terperosok ke Petak ${toTile}!`;
+      }
+
+      catBadge.textContent = `${question.genre} • ${question.category}`;
+      passageEl.textContent = `"${question.passage}"`;
+      questionEl.textContent = question.question;
+
+      // Reset kotak umpan balik
+      feedbackBox.classList.add('hidden');
+
+      // Render 4 pilihan jawaban
+      const letters = ['A', 'B', 'C', 'D'];
+      optionsContainer.innerHTML = question.options.map((optText, idx) => `
+        <button
+          type="button"
+          onclick="submitQuizAnswer(${idx})"
+          id="quiz-opt-${idx}"
+          class="w-full text-left p-3.5 sm:p-4 rounded-2xl bg-slate-50 hover:bg-indigo-50 border-2 border-slate-200 hover:border-indigo-400 transition flex items-start gap-3 group">
+          <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-white border-2 border-slate-300 group-hover:border-indigo-500 group-hover:bg-indigo-600 group-hover:text-white font-fredoka font-bold text-sm flex items-center justify-center shrink-0 transition">
+            ${letters[idx]}
+          </span>
+          <span class="text-xs sm:text-sm font-bold text-slate-800 pt-1 leading-snug">
+            ${escapeHtml(optText)}
+          </span>
+        </button>
+      `).join('');
+
+      document.getElementById('quiz-modal').classList.remove('hidden');
+    }
+
+    function submitQuizAnswer(selectedIndex) {
+      const event = gameState.pendingSpecialEvent;
+      if (!event || event.locked) return;
+      event.locked = true;
+
+      const { question, type, from, to } = event;
+      const isCorrect = selectedIndex === question.correctIndex;
+      event.answeredCorrectly = isCorrect;
+
+      const activePlayer = gameState.players[gameState.currentTurn];
+      if (isCorrect) {
+        activePlayer.correct += 1;
+        sfx.playCorrect();
+      } else {
+        sfx.playWrong();
+      }
+
+      // Sorot tombol jawaban benar & salah
+      for (let i = 0; i < question.options.length; i++) {
+        const btn = document.getElementById(`quiz-opt-${i}`);
+        btn.disabled = true;
+        btn.classList.remove('hover:bg-indigo-50', 'hover:border-indigo-400');
+
+        if (i === question.correctIndex) {
+          btn.className = 'w-full text-left p-3.5 sm:p-4 rounded-2xl bg-emerald-100 border-2 border-emerald-500 flex items-start gap-3';
+          btn.firstElementChild.className = 'w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-emerald-600 text-white font-fredoka font-bold text-sm flex items-center justify-center shrink-0';
+          btn.firstElementChild.textContent = '✓';
+        } else if (i === selectedIndex && !isCorrect) {
+          btn.className = 'w-full text-left p-3.5 sm:p-4 rounded-2xl bg-rose-100 border-2 border-rose-500 flex items-start gap-3';
+          btn.firstElementChild.className = 'w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-rose-600 text-white font-fredoka font-bold text-sm flex items-center justify-center shrink-0';
+          btn.firstElementChild.textContent = '✕';
+        } else {
+          btn.classList.add('opacity-60');
+        }
+      }
+
+      // Tampilkan umpan balik & pembahasan singkat
+      const feedbackBox = document.getElementById('quiz-feedback-box');
+      const feedbackIcon = document.getElementById('quiz-feedback-icon');
+      const feedbackTitle = document.getElementById('quiz-feedback-title');
+      const feedbackExplanation = document.getElementById('quiz-feedback-explanation');
+      const continueBtn = document.getElementById('btn-quiz-continue');
+
+      let outcomeSummary = '';
+      if (type === 'ladder') {
+        outcomeSummary = isCorrect
+          ? `🎉 Petunjuk terpecahkan! ${activePlayer.name} naik tangga dari Petak ${from} ke Petak ${to}!`
+          : `😅 Jawaban kurang tepat. ${activePlayer.name} belum berhasil menaiki tangga dan tetap di Petak ${from}.`;
+      } else {
+        outcomeSummary = isCorrect
+          ? `🛡️ Detektif jeli! ${activePlayer.name} berhasil menghindari jebakan ular dan bertahan aman di Petak ${from}!`
+          : `🐍 Terkecoh makna! ${activePlayer.name} tergelincir ular dari Petak ${from} turun ke Petak ${to}!`;
+      }
+
+      if (isCorrect) {
+        feedbackBox.className = 'rounded-2xl p-4 border-2 bg-emerald-50 border-emerald-300 text-emerald-950 animate-modal-pop';
+        feedbackIcon.textContent = '🌟';
+        feedbackTitle.textContent = 'Analisis Tepat! (+1 Petunjuk Terpecahkan)';
+      } else {
+        feedbackBox.className = 'rounded-2xl p-4 border-2 bg-rose-50 border-rose-300 text-rose-950 animate-modal-pop';
+        feedbackIcon.textContent = '🔎';
+        feedbackTitle.textContent = 'Kurang Tepat, Mari Cermati Pembahasannya!';
+      }
+
+      feedbackExplanation.innerHTML = `
+        <span class="block mb-1.5 text-slate-800">${escapeHtml(question.explanation)}</span>
+        <span class="inline-block px-2.5 py-1 rounded-lg bg-white/90 border border-slate-200 font-extrabold text-xs text-indigo-900">
+          ${escapeHtml(outcomeSummary)}
+        </span>
+      `;
+
+      continueBtn.textContent = isCorrect && type === 'ladder'
+        ? `Naik Tangga ke Petak ${to} 🪜`
+        : (!isCorrect && type === 'snake'
+          ? `Turun ke Petak ${to} 🐍`
+          : 'Lanjutkan Permainan ➡️');
+
+      feedbackBox.classList.remove('hidden');
+    }
+
+    async function finalizeQuizOutcome() {
+      const event = gameState.pendingSpecialEvent;
+      document.getElementById('quiz-modal').classList.add('hidden');
+      if (!event) {
+        switchTurn();
+        return;
+      }
+
+      const activePlayer = gameState.players[gameState.currentTurn];
+      const { type, from, to, answeredCorrectly } = event;
+      gameState.pendingSpecialEvent = null;
+
+      if (type === 'ladder' && answeredCorrectly) {
+        sfx.playLadderClimb();
+        activePlayer.pos = to;
+        updatePawnPositions(true);
+        addGameLog(`🪜✨ <strong>${escapeHtml(activePlayer.name)}</strong> menjawab benar dan naik tangga ke <strong>Petak ${to}</strong>!`);
+        await sleep(500);
+      } else if (type === 'ladder' && !answeredCorrectly) {
+        addGameLog(`❌ <strong>${escapeHtml(activePlayer.name)}</strong> belum berhasil naik tangga di Petak ${from}.`);
+      } else if (type === 'snake' && answeredCorrectly) {
+        addGameLog(`🛡️ <strong>${escapeHtml(activePlayer.name)}</strong> menjawab benar dan selamat dari ular di Petak ${from}!`);
+      } else if (type === 'snake' && !answeredCorrectly) {
+        sfx.playSnakeSlide();
+        activePlayer.pos = to;
+        updatePawnPositions(true);
+        addGameLog(`🐍💨 <strong>${escapeHtml(activePlayer.name)}</strong> terkecoh dan turun ular ke <strong>Petak ${to}</strong>!`);
+        await sleep(500);
+      }
+
+      // Cek ulang apakah posisi baru mencapai Finis
+      if (activePlayer.pos >= TOTAL_TILES) {
+        handlePlayerVictory(activePlayer);
+        return;
+      }
+
+      switchTurn();
+    }
+
+    /**
+     * =========================================================================
+     * 9. GAME OVER & PENYIMPANAN SKOR LEADERBOARD (LOCALSTORAGE)
+     * =========================================================================
+     */
+    function calculateDetectiveScore(player) {
+      // Skor memberi bobot tinggi pada efisiensi lemparan dadu (semakin sedikit semakin baik) + bonus kuis benar
+      const efficiencyBase = Math.max(200, 1200 - (player.rolls * 45));
+      const quizBonus = player.correct * 100;
+      return efficiencyBase + quizBonus;
+    }
+
+    function handlePlayerVictory(winner) {
+      sfx.playWin();
+      gameState.isBusy = true;
+
+      const totalMatchRolls = gameState.players[0].rolls + gameState.players[1].rolls;
+      const detectiveScore = calculateDetectiveScore(winner);
+
+      addGameLog(`👑 <strong>${escapeHtml(winner.name)}</strong> mencapai Petak 25 dan memenangkan investigasi!`);
+
+      // Simpan ke localStorage
+      saveRecordToLeaderboard({
+        id: Date.now(),
+        winnerName: winner.name,
+        teamName: gameState.teamName,
+        rolls: winner.rolls,
+        correct: winner.correct,
+        score: detectiveScore,
+        date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })
+      });
+
+      // Tampilkan Modal Game Over
+      document.getElementById('winner-name-display').textContent = `${winner.name} Menang!`;
+      document.getElementById('winner-team-display').textContent = gameState.teamName;
+      document.getElementById('stat-winner-rolls').textContent = `${winner.rolls} Kali`;
+      document.getElementById('stat-winner-score').textContent = `${detectiveScore} Poin`;
+      document.getElementById('stat-winner-correct').textContent = `${winner.correct} Kasus`;
+      document.getElementById('stat-total-rolls').textContent = `${totalMatchRolls} Kali`;
+
+      document.getElementById('gameover-modal').classList.remove('hidden');
+    }
+
+    function closeGameOverAndViewLeaderboard() {
+      document.getElementById('gameover-modal').classList.add('hidden');
+      navigateTo('leaderboard');
+    }
+
+    function closeGameOverAndGoStart() {
+      document.getElementById('gameover-modal').classList.add('hidden');
+      navigateTo('start');
+    }
+
+    /**
+     * =========================================================================
+     * 10. SISTEM LEADERBOARD (LOCALSTORAGE & PODIUM 3 BESAR)
+     * =========================================================================
+     */
+    function getLeaderboardRecords() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (err) {
+        return [];
+      }
+    }
+
+    function saveRecordToLeaderboard(newRecord) {
+      const records = getLeaderboardRecords();
+      records.push(newRecord);
+      // Urutkan berdasarkan skor tertinggi, lalu jumlah lemparan dadu paling sedikit
+      records.sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return a.rolls - b.rolls;
+      });
+      const trimmed = records.slice(0, 20);
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
+      } catch (err) {
+        // Abaikan jika penyimpanan penuh
+      }
+    }
+
+    function seedInitialLeaderboardIfEmpty() {
+      const existing = getLeaderboardRecords();
+      if (existing.length > 0) return;
+
+      const sampleData = [
+        {
+          id: 101,
+          winnerName: 'Nadia Putri',
+          teamName: 'Kelas 9A - SMPN 1 Cendekia',
+          rolls: 7,
+          correct: 3,
+          score: 1185,
+          date: 'Contoh Rekor'
+        },
+        {
+          id: 102,
+          winnerName: 'Rafi Pratama',
+          teamName: 'Kelas 9B - SMPN 2 Merdeka',
+          rolls: 9,
+          correct: 3,
+          score: 1095,
+          date: 'Contoh Rekor'
+        },
+        {
+          id: 103,
+          winnerName: 'Salsa Kirana',
+          teamName: 'Kelas 9C - SMP Taruna Bangsa',
+          rolls: 10,
+          correct: 2,
+          score: 950,
+          date: 'Contoh Rekor'
+        }
+      ];
+
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(sampleData));
+      } catch (err) {
+        // Abaikan
+      }
+    }
+
+    function renderLeaderboard() {
+      const records = getLeaderboardRecords();
+      const podiumContainer = document.getElementById('podium-container');
+      const listContainer = document.getElementById('leaderboard-list');
+      const countLabel = document.getElementById('leaderboard-count');
+
+      countLabel.textContent = `${records.length} Rekor Tersimpan`;
+
+      if (records.length === 0) {
+        podiumContainer.innerHTML = `
+          <div class="col-span-3 text-center py-6 bg-amber-50 rounded-2xl border-2 border-dashed border-amber-300">
+            <p class="font-fredoka text-lg font-bold text-amber-900">Belum ada rekor tersimpan</p>
+            <p class="text-xs font-semibold text-amber-700 mt-1">Mainkan satu pertandingan untuk mengisi Podium 3 Besar!</p>
+          </div>
+        `;
+        listContainer.innerHTML = `
+          <div class="p-6 text-center text-xs sm:text-sm font-bold text-slate-400">
+            Data peringkat masih kosong.
+          </div>
+        `;
+        return;
+      }
+
+      // Render Podium 3 Besar (Urutan visual: Juara 2 di kiri, Juara 1 di tengah, Juara 3 di kanan)
+      const top1 = records[0];
+      const top2 = records[1];
+      const top3 = records[2];
+
+      const buildPodiumSlot = (rec, rank, heightClass, bgGradient, borderClass, medalEmoji) => {
+        if (!rec) {
+          return `
+            <div class="flex flex-col items-center">
+              <div class="w-full ${heightClass} rounded-t-2xl bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center p-2 text-center">
+                <span class="text-xs font-bold text-slate-400">Posisi #${rank}</span>
+              </div>
+            </div>
+          `;
+        }
+        return `
+          <div class="flex flex-col items-center text-center">
+            <div class="text-2xl sm:text-3xl mb-1">${medalEmoji}</div>
+            <p class="font-fredoka font-bold text-xs sm:text-base text-slate-800 line-clamp-1 px-1">
+              ${escapeHtml(rec.winnerName)}
+            </p>
+            <p class="text-[10px] sm:text-xs font-bold text-slate-500 line-clamp-1 px-1 mb-1.5">
+              ${escapeHtml(rec.teamName)}
+            </p>
+            <div class="w-full ${heightClass} rounded-t-2xl bg-gradient-to-b ${bgGradient} border-x-2 border-t-2 ${borderClass} p-2 flex flex-col justify-center items-center text-white shadow-md">
+              <span class="font-fredoka text-base sm:text-xl font-bold leading-none">#${rank}</span>
+              <span class="text-[11px] sm:text-xs font-extrabold mt-1">${rec.score} Poin</span>
+              <span class="text-[10px] opacity-90 font-bold">${rec.rolls}x Dadu</span>
+            </div>
+          </div>
+        `;
+      };
+
+      podiumContainer.innerHTML =
+        buildPodiumSlot(top2, 2, 'h-24 sm:h-28', 'from-slate-400 to-slate-600', 'border-slate-300', '🥈') +
+        buildPodiumSlot(top1, 1, 'h-32 sm:h-36', 'from-amber-400 to-orange-500', 'border-amber-200', '🥇') +
+        buildPodiumSlot(top3, 3, 'h-20 sm:h-24', 'from-amber-700 to-orange-800', 'border-amber-600', '🥉');
+
+      // Render Daftar Lengkap
+      listContainer.innerHTML = records.map((rec, idx) => {
+        const rank = idx + 1;
+        const badgeStyle = rank === 1
+          ? 'bg-amber-400 text-amber-950'
+          : rank === 2
+            ? 'bg-slate-300 text-slate-900'
+            : rank === 3
+              ? 'bg-orange-300 text-orange-950'
+              : 'bg-slate-100 text-slate-600';
+
+        return `
+          <div class="px-4 py-3 flex items-center justify-between gap-3 hover:bg-amber-50/60 transition">
+            <div class="flex items-center gap-3 min-w-0">
+              <span class="w-7 h-7 rounded-xl ${badgeStyle} font-fredoka font-bold text-xs flex items-center justify-center shrink-0">
+                ${rank}
+              </span>
+              <div class="min-w-0">
+                <p class="font-fredoka font-bold text-sm sm:text-base text-slate-800 truncate">
+                  ${escapeHtml(rec.winnerName)}
+                </p>
+                <p class="text-xs font-semibold text-slate-500 truncate">
+                  ${escapeHtml(rec.teamName)} • ${escapeHtml(rec.date || '')}
+                </p>
+              </div>
+            </div>
+
+            <div class="text-right shrink-0">
+              <p class="font-fredoka font-bold text-sm sm:text-base text-indigo-700">
+                ${rec.score} Poin
+              </p>
+              <p class="text-[11px] font-bold text-slate-500">
+                🎲 ${rec.rolls}x • ✅ ${rec.correct || 0} Kuis
+              </p>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function handleResetLeaderboard() {
+      const btn = document.getElementById('btn-reset-leaderboard');
+      if (!resetConfirmPending) {
+        resetConfirmPending = true;
+        btn.textContent = '⚠️ Klik Sekali Lagi untuk Konfirmasi Hapus';
+        btn.classList.add('bg-rose-600', 'text-white');
+        clearTimeout(resetConfirmTimer);
+        resetConfirmTimer = setTimeout(() => {
+          resetConfirmPending = false;
+          btn.textContent = '🗑️ Hapus Riwayat Skor';
+          btn.classList.remove('bg-rose-600', 'text-white');
+        }, 3500);
+        return;
+      }
+
+      clearTimeout(resetConfirmTimer);
+      resetConfirmPending = false;
+      btn.textContent = '🗑️ Hapus Riwayat Skor';
+      btn.classList.remove('bg-rose-600', 'text-white');
+
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+      } catch (err) {
+        // Abaikan
+      }
+      renderLeaderboard();
+      showToast('🗑️ Riwayat papan peringkat berhasil dibersihkan.', 'info');
+    }
+
+    /**
+     * =========================================================================
+     * 11. MODAL PANDUAN, KONFIRMASI KELUAR & UTILITAS KEAMANAN TEKS
+     * =========================================================================
+     */
+    function openRulesModal() {
+      document.getElementById('rules-modal').classList.remove('hidden');
+    }
+
+    function closeRulesModal() {
+      document.getElementById('rules-modal').classList.add('hidden');
+    }
+
+    function openQuitConfirmModal() {
+      document.getElementById('quit-modal').classList.remove('hidden');
+    }
+
+    function closeQuitConfirmModal() {
+      document.getElementById('quit-modal').classList.add('hidden');
+    }
+
+    function confirmQuitGame() {
+      closeQuitConfirmModal();
+      gameState.isBusy = false;
+      navigateTo('start');
+    }
+
+    function escapeHtml(text) {
+      const str = String(text ?? '');
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>
